@@ -1,0 +1,290 @@
+---
+// ManufacturingSection.astro - AR Mine in Manufacturing
+const manufacturingUseCases = [
+  {
+    step: "01",
+    title: "Machine Operation",
+    desc: "Interactive holographic HUDs overlaying live control panels, rotation speeds, thermal thresholds, and lockout-tagout checkpoints.",
+    icon: "⚙️"
+  },
+  {
+    step: "02",
+    title: "Maintenance Procedures",
+    desc: "Guided visual disassembly and torque sequence verification directly onto machinery components to prevent catastrophic assembly errors.",
+    icon: "🔧"
+  },
+  {
+    step: "03",
+    title: "Safety Instructions",
+    desc: "Contextual safety guard requirements, PPE checklists, and pinch-point warnings projected dynamically before activating robotic cells.",
+    icon: "🦺"
+  },
+  {
+    step: "04",
+    title: "Equipment Identification",
+    desc: "Instant barcode and computer vision recognition of pneumatic valves, electrical conduits, high-voltage panels, and PLC units.",
+    icon: "🏷️"
+  },
+  {
+    step: "05",
+    title: "Workplace Hazard Awareness",
+    desc: "Autonomous floor highlighting for forklift transit lanes, crane swing radiuses, and chemical spill perimeter management.",
+    icon: "⚠️"
+  },
+  {
+    step: "06",
+    title: "Employee Training & Onboarding",
+    desc: "Accelerated technical ramp-up where new technicians practice precision operations in a virtual sandbox on physical equipment.",
+    icon: "🎓"
+  },
+  {
+    step: "07",
+    title: "Emergency Procedures",
+    desc: "Rapid location of emergency stop (E-stop) triggers, fire suppression stations, eye-wash stations, and chemical neutralizers.",
+    icon: "🚨"
+  }
+];
+---
+
+<section id="manufacturing" class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal-on-scroll">
+      <span class="section-tag">Factory & Plant Safety</span>
+      <h2 class="section-title">AR Mine in the Manufacturing Industry</h2>
+      <p class="section-subtitle">
+        Modern manufacturing plants feature intricate automated assembly lines, high-speed robotics, pneumatic systems, and tight production cycles. AR Mine provides intuitive spatial assistance across all operations.
+      </p>
+    </div>
+
+    <!-- Modern Industrial Workflow Visualization -->
+    <div class="mfg-visual-strip card reveal-on-scroll">
+      <div class="strip-header">
+        <div class="strip-badge">
+          <span class="pulse-dot"></span>
+          SMART FACTORY AUGMENTATION LAYER
+        </div>
+        <div class="strip-tags">
+          <span>ASSEMBLY LINE</span>
+          <span>ROBOTICS CELL</span>
+          <span>CNC MACHINING</span>
+          <span>LOGISTICS</span>
+        </div>
+      </div>
+
+      <div class="strip-body">
+        <div class="strip-image-container ar-reticle-frame">
+          <img 
+            src="/assets/armine-lesson.png" 
+            alt="AR Mine Interactive Manufacturing Safety Lesson" 
+            class="strip-img"
+            loading="lazy"
+          />
+        </div>
+        <div class="strip-content">
+          <h3>Precision Spatial Guidance for Complex Assembly</h3>
+          <p>
+            By projecting animated diagrams, safety parameters, and step sequences directly onto shop-floor machines, AR Mine eliminates manual lookup delays and drastically reduces industrial incident rates.
+          </p>
+          <div class="strip-stats">
+            <div class="s-stat">
+              <span class="stat-val">100%</span>
+              <span class="stat-desc">Hands-Free Spatial Awareness</span>
+            </div>
+            <div class="s-stat">
+              <span class="stat-val">0</span>
+              <span class="stat-desc">Manual Paper Lag</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Use Cases Grid -->
+    <div class="usecases-grid">
+      {manufacturingUseCases.map((item, idx) => (
+        <div class="usecase-card card reveal-on-scroll" data-reveal-delay={idx * 50}>
+          <div class="usecase-top">
+            <span class="usecase-icon">{item.icon}</span>
+            <span class="usecase-step">{item.step}</span>
+          </div>
+          <h3 class="usecase-title">{item.title}</h3>
+          <p class="usecase-desc">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .mfg-visual-strip {
+    padding: 2rem;
+    margin-bottom: 3.5rem;
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .strip-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 1.75rem;
+  }
+
+  .strip-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    background-color: var(--accent-blue-subtle);
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--accent-blue-border);
+  }
+
+  .strip-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .strip-tags span {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--bg-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .strip-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .strip-body {
+      grid-template-columns: 1fr 1.15fr;
+      gap: 3rem;
+    }
+  }
+
+  .strip-image-container {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    background-color: var(--bg-tertiary);
+  }
+
+  .strip-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .strip-content h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .strip-content p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.75rem;
+    line-height: 1.65;
+  }
+
+  .strip-stats {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .s-stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-val {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent-blue);
+  }
+
+  .stat-desc {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+  }
+
+  /* Use Cases Grid */
+  .usecases-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .usecases-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .usecases-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .usecase-card {
+    padding: 1.75rem;
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .usecase-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .usecase-icon {
+    font-size: 1.5rem;
+  }
+
+  .usecase-step {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    background-color: var(--accent-blue-subtle);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .usecase-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .usecase-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+</style>

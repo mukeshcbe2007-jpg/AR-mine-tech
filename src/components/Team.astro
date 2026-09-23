@@ -1,0 +1,207 @@
+---
+// Team.astro - Crew Stars Team Section
+import TeamCard from './TeamCard.astro';
+
+const leader = {
+  name: "Mukesh A",
+  role: "Team Leader",
+  initials: "MA",
+  isLeader: true
+};
+
+const membersRow1 = [
+  { name: "Mahesh Kumar M", role: "Team Member", initials: "MK" },
+  { name: "Shakthi B", role: "Team Member", initials: "SB" },
+  { name: "Jothibalan C", role: "Team Member", initials: "JC" }
+];
+
+const membersRow2 = [
+  { name: "Franklin J", role: "Team Member", initials: "FJ" },
+  { name: "Jenne Richard T.S", role: "Team Member", initials: "JR" }
+];
+---
+
+<section id="team" class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal-on-scroll">
+      <span class="section-tag">Crew Stars · Innovation Team</span>
+      <h2 class="section-title">Meet Crew Stars</h2>
+      <p class="section-subtitle">
+        Building technology for safer industrial environments.
+      </p>
+    </div>
+
+    <!-- Team Intro Box -->
+    <div class="team-intro-container card reveal-on-scroll">
+      <div class="intro-badge">
+        <span class="badge-dot"></span>
+        <span>ACADEMIC TECHNOLOGY COLLABORATIVE</span>
+      </div>
+      <p class="team-intro-text">
+        Crew Stars is a student technology team working on AR Mine, a concept focused on using Augmented Reality to improve safety awareness, training, and access to contextual information in mining and manufacturing environments.
+      </p>
+      <div class="team-meta-pills">
+        <div class="meta-pill">
+          <span class="pill-label">Team:</span>
+          <strong>Crew Stars</strong>
+        </div>
+        <div class="meta-pill">
+          <span class="pill-label">Project:</span>
+          <strong>AR Mine</strong>
+        </div>
+        <div class="meta-pill">
+          <span class="pill-label">Domain:</span>
+          <strong>Augmented Reality for Mining & Manufacturing Safety</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Hierarchy Grid -->
+    <div class="team-layout">
+      <!-- 1 Team Leader Card (Centered & Highlighted) -->
+      <div class="leader-wrapper">
+        <TeamCard 
+          name={leader.name}
+          role={leader.role}
+          initials={leader.initials}
+          isLeader={true}
+          delay={100}
+        />
+      </div>
+
+      <!-- 5 Team Member Cards (Clean Responsive Grid) -->
+      <div class="members-row-first">
+        {membersRow1.map((member, idx) => (
+          <TeamCard 
+            name={member.name}
+            role={member.role}
+            initials={member.initials}
+            delay={150 + idx * 80}
+          />
+        ))}
+      </div>
+
+      <div class="members-row-second">
+        {membersRow2.map((member, idx) => (
+          <TeamCard 
+            name={member.name}
+            role={member.role}
+            initials={member.initials}
+            delay={390 + idx * 80}
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .team-intro-container {
+    max-width: 820px;
+    margin: 0 auto 3.5rem auto;
+    padding: 2.25rem 2.5rem;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .intro-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    background-color: var(--accent-blue-subtle);
+    border: 1px solid var(--accent-blue-border);
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    margin-bottom: 1.25rem;
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-blue);
+  }
+
+  .team-intro-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    margin-bottom: 1.75rem;
+  }
+
+  .team-meta-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .meta-pill {
+    font-size: 0.825rem;
+    color: var(--text-secondary);
+    background-color: var(--bg-secondary);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .pill-label {
+    color: var(--text-muted);
+    margin-right: 0.35rem;
+  }
+
+  /* Team Layout */
+  .team-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    align-items: center;
+  }
+
+  .leader-wrapper {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto 0.5rem auto;
+  }
+
+  .members-row-first {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .members-row-first {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .members-row-first {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .members-row-second {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 640px) {
+    .members-row-second {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

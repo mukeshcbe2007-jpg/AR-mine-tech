@@ -1,0 +1,521 @@
+---
+// Hero.astro - Premium AR Mine Technology Showcase
+---
+
+<section id="hero" class="hero-section">
+  <div class="container hero-container">
+    <!-- Hero Copy -->
+    <div class="hero-content">
+      <div class="hero-animate-in">
+        <span class="section-tag">
+          <span class="pulse-dot"></span>
+          Industrial Augmented Reality Platform
+        </span>
+      </div>
+
+      <h1 class="hero-title hero-animate-in">
+        AR Mine: Transforming Safety Through <span class="gradient-text">Augmented Reality</span>
+      </h1>
+
+      <p class="hero-description hero-animate-in">
+        AR Mine is an Augmented Reality-based safety solution designed to improve workplace awareness, provide real-time guidance, and help workers understand potential hazards before accidents occur.
+      </p>
+
+      <div class="hero-cta-group hero-animate-in">
+        <a href="#about" class="btn btn-primary btn-lg">
+          <span>Explore AR Mine</span>
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+
+        <a href="/blog" class="btn btn-secondary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+          <span>Read Our Blog</span>
+        </a>
+      </div>
+
+      <!-- Quick Trust Indicators -->
+      <div class="hero-stats-row hero-animate-in">
+        <div class="stat-item">
+          <span class="stat-number">Real-Time</span>
+          <span class="stat-label">Spatial Hazard Tracking</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">3D Overlays</span>
+          <span class="stat-label">Equipment Telemetry</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">Crew Stars</span>
+          <span class="stat-label">Safety Innovation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Interactive AR Viewport -->
+    <div class="hero-visual-wrapper hero-animate-in">
+      <div class="ar-viewport card ar-reticle-frame">
+        <!-- Viewport Top Bar / Telemetry Header -->
+        <div class="viewport-header">
+          <div class="header-left">
+            <span class="hud-status-dot"></span>
+            <span class="hud-label">AR HUD v2.4</span>
+            <span class="hud-sep">|</span>
+            <span class="hud-mono" id="hud-mode-indicator">ALL SYSTEMS ACTIVE</span>
+          </div>
+          <div class="header-right">
+            <span class="hud-coords">SEC: SUB-04 · 128m LEVEL</span>
+          </div>
+        </div>
+
+        <!-- Simulated Mining / Industrial Scene with Real App Overlays -->
+        <div class="viewport-scene">
+          <img 
+            src="/assets/armine-ar-practice.png" 
+            alt="AR Mine Augmented Reality Safety Interface Prototype" 
+            class="scene-base-image"
+            loading="eager"
+          />
+
+          <!-- Overlay 1: HAZARD DETECTED -->
+          <div class="ar-floating-tag hazard-tag" data-marker-type="hazard" style="top: 18%; left: 8%;">
+            <div class="tag-pin">
+              <span class="pin-ring hazard-ring"></span>
+              <span class="pin-dot"></span>
+            </div>
+            <div class="tag-card ar-badge-hazard">
+              <div class="tag-header">
+                <span class="pulse-dot"></span>
+                <strong>HAZARD DETECTED</strong>
+              </div>
+              <div class="tag-meta">ZONE B-4 · HIGH PRESSURE LINE</div>
+              <div class="tag-metric">CLEARANCE DISTANCE: 3.4M</div>
+            </div>
+          </div>
+
+          <!-- Overlay 2: SAFETY ZONE -->
+          <div class="ar-floating-tag safe-tag" data-marker-type="safe" style="bottom: 22%; left: 14%;">
+            <div class="tag-pin">
+              <span class="pin-ring safe-ring"></span>
+              <span class="pin-dot"></span>
+            </div>
+            <div class="tag-card ar-badge-safe">
+              <div class="tag-header">
+                <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <strong>SAFETY ZONE</strong>
+              </div>
+              <div class="tag-meta">APPROVED PEDESTRIAN CORRIDOR</div>
+              <div class="tag-metric">ATMOSPHERE: 99.8% NORMAL</div>
+            </div>
+          </div>
+
+          <!-- Overlay 3: EQUIPMENT INFO -->
+          <div class="ar-floating-tag info-tag" data-marker-type="equipment" style="top: 26%; right: 10%;">
+            <div class="tag-pin">
+              <span class="pin-ring info-ring"></span>
+              <span class="pin-dot"></span>
+            </div>
+            <div class="tag-card ar-badge-info">
+              <div class="tag-header">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+                <strong>EQUIPMENT INFO</strong>
+              </div>
+              <div class="tag-meta">HYDRAULIC DRILL UNIT #07</div>
+              <div class="tag-metric">PRESSURE: 320 BAR · 68°C · PASS</div>
+            </div>
+          </div>
+
+          <!-- Overlay 4: EMERGENCY ROUTE -->
+          <div class="ar-floating-tag route-tag" data-marker-type="emergency" style="bottom: 12%; right: 12%;">
+            <div class="tag-pin">
+              <span class="pin-ring warning-ring"></span>
+              <span class="pin-dot"></span>
+            </div>
+            <div class="tag-card ar-badge-warning">
+              <div class="tag-header">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <strong>EMERGENCY ROUTE</strong>
+              </div>
+              <div class="tag-meta">PRIMARY SHAFT EVACUATION</div>
+              <div class="tag-metric">DISTANCE: 42M · AR GUIDED</div>
+            </div>
+          </div>
+
+          <!-- AR Reticle Crosshair in Center -->
+          <div class="center-crosshair">
+            <span class="ch-line-h"></span>
+            <span class="ch-line-v"></span>
+            <span class="ch-box"></span>
+          </div>
+        </div>
+
+        <!-- Interactive HUD Controls -->
+        <div class="viewport-controls">
+          <span class="controls-label">Interactive AR Filter:</span>
+          <div class="controls-buttons">
+            <button type="button" class="hud-filter-btn active" data-hud-mode="all">All Overlays</button>
+            <button type="button" class="hud-filter-btn" data-hud-mode="hazard">Hazard</button>
+            <button type="button" class="hud-filter-btn" data-hud-mode="safe">Safety Zone</button>
+            <button type="button" class="hud-filter-btn" data-hud-mode="equipment">Equipment</button>
+            <button type="button" class="hud-filter-btn" data-hud-mode="emergency">Emergency</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    padding-top: 4.5rem;
+    padding-bottom: 5.5rem;
+    background: radial-gradient(circle at top right, rgba(239, 246, 255, 0.7) 0%, rgba(255, 255, 255, 0) 60%),
+                radial-gradient(circle at center left, rgba(240, 249, 255, 0.5) 0%, rgba(255, 255, 255, 0) 50%);
+  }
+
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-container {
+      grid-template-columns: 1.05fr 1fr;
+      gap: 4rem;
+    }
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-title {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #1E293B 0%, #2563EB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-description {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 2.25rem;
+    max-width: 600px;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  /* Stats Row */
+  .hero-stats-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--border-subtle);
+    width: 100%;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-number {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+  }
+
+  .stat-label {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 32px;
+    background-color: var(--border-subtle);
+  }
+
+  /* AR Viewport Card */
+  .hero-visual-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .ar-viewport {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: 1.25rem;
+    box-shadow: 0 12px 36px -8px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+  }
+
+  .viewport-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hud-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #10B981;
+    box-shadow: 0 0 6px #10B981;
+  }
+
+  .hud-label {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .hud-sep {
+    color: var(--border-medium);
+  }
+
+  .hud-mono {
+    color: var(--accent-blue);
+    font-weight: 600;
+  }
+
+  .hud-coords {
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  /* Viewport Scene Frame */
+  .viewport-scene {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    background-color: #F8FAFC;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+  }
+
+  @media (min-width: 640px) {
+    .viewport-scene {
+      height: 440px;
+    }
+  }
+
+  .scene-base-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.97) contrast(1.02);
+  }
+
+  /* Center Crosshair */
+  .center-crosshair {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 0.45;
+  }
+
+  .ch-line-h {
+    position: absolute;
+    top: 0;
+    left: -24px;
+    width: 48px;
+    height: 1px;
+    background-color: var(--accent-blue);
+  }
+
+  .ch-line-v {
+    position: absolute;
+    top: -24px;
+    left: 0;
+    width: 1px;
+    height: 48px;
+    background-color: var(--accent-blue);
+  }
+
+  .ch-box {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: 16px;
+    height: 16px;
+    border: 1px dashed var(--accent-blue);
+    border-radius: 2px;
+  }
+
+  /* Floating AR HUD Tags */
+  .ar-floating-tag {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .ar-floating-tag.hud-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.85);
+  }
+
+  .tag-pin {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    margin-bottom: 4px;
+    margin-left: 10px;
+  }
+
+  .pin-dot {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  }
+
+  .pin-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid;
+    animation: radar-pulse 2s infinite ease-out;
+  }
+
+  .hazard-ring { border-color: var(--safety-hazard); }
+  .safe-ring { border-color: var(--safety-safe); }
+  .info-ring { border-color: var(--safety-info); }
+  .warning-ring { border-color: var(--safety-warning); }
+
+  .tag-card {
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 0.75rem;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+    font-size: 0.75rem;
+    line-height: 1.3;
+    max-width: 220px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .tag-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .tag-meta {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    opacity: 0.85;
+    margin-bottom: 0.2rem;
+  }
+
+  .tag-metric {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+  }
+
+  /* Viewport Controls */
+  .viewport-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .controls-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .controls-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .hud-filter-btn {
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 0.35rem 0.65rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .hud-filter-btn:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+  }
+
+  .hud-filter-btn.active {
+    background-color: var(--accent-blue);
+    border-color: var(--accent-blue);
+    color: #FFFFFF;
+  }
+</style>

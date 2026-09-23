@@ -1,0 +1,211 @@
+---
+// BlogCard.astro - Reusable modern editorial card
+interface Props {
+  title: string;
+  slug: string;
+  category: string;
+  description: string;
+  readTime: string;
+  date: string;
+  featured?: boolean;
+  imageSrc?: string;
+  delay?: number;
+}
+
+const {
+  title,
+  slug,
+  category,
+  description,
+  readTime,
+  date,
+  featured = false,
+  imageSrc,
+  delay = 0
+} = Astro.props;
+---
+
+<article class={`blog-card card reveal-on-scroll ${featured ? 'card-featured' : ''}`} data-reveal-delay={delay}>
+  {imageSrc && (
+    <div class="blog-media-wrap">
+      <img src={imageSrc} alt={title} class="blog-img" loading="lazy" />
+      <span class="media-category-badge">{category}</span>
+    </div>
+  )}
+
+  <div class="blog-card-content">
+    {!imageSrc && (
+      <div class="blog-meta-top">
+        <span class="category-badge">{category}</span>
+        <span class="read-time">{readTime}</span>
+      </div>
+    )}
+
+    <h3 class="blog-title">
+      <a href={`/blog/${slug}`} class="blog-link">{title}</a>
+    </h3>
+
+    <p class="blog-desc">{description}</p>
+
+    <div class="blog-card-footer">
+      <div class="footer-meta">
+        <span class="pub-date">{date}</span>
+        {imageSrc && <span class="pub-sep">·</span>}
+        {imageSrc && <span class="pub-read">{readTime}</span>}
+      </div>
+
+      <a href={`/blog/${slug}`} class="read-btn" aria-label={`Read full article: ${title}`}>
+        <span>Read Article</span>
+        <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .blog-card {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+  }
+
+  .blog-card:hover {
+    border-color: var(--accent-blue-border);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .blog-media-wrap {
+    position: relative;
+    width: 100%;
+    height: 210px;
+    background-color: var(--bg-tertiary);
+    overflow: hidden;
+  }
+
+  .blog-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .blog-card:hover .blog-img {
+    transform: scale(1.03);
+  }
+
+  .media-category-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    padding: 0.3rem 0.65rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .blog-card-content {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .blog-meta-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .category-badge {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    background-color: var(--accent-blue-subtle);
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--accent-blue-border);
+  }
+
+  .read-time {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  .blog-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.35;
+  }
+
+  .blog-link {
+    color: var(--text-primary);
+  }
+
+  .blog-link:hover {
+    color: var(--accent-blue);
+  }
+
+  .blog-desc {
+    font-size: 0.925rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+    flex-grow: 1;
+  }
+
+  .blog-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-light);
+    margin-top: auto;
+  }
+
+  .footer-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .read-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    transition: gap var(--transition-fast);
+  }
+
+  .read-btn:hover {
+    gap: 0.55rem;
+    color: var(--accent-blue-hover);
+  }
+
+  /* Featured Variation */
+  .card-featured {
+    border-color: var(--accent-blue-border);
+    box-shadow: var(--shadow-md);
+  }
+</style>

@@ -1,0 +1,291 @@
+---
+// MiningSection.astro - AR Mine in the Mining Industry
+const miningCards = [
+  {
+    title: "Hazard Zones",
+    desc: "Dynamic color-coded spatial boundaries alerting workers to high-risk blast areas, toxic gas pockets, and steep drop-offs.",
+    tag: "GEOLOGICAL SAFETY",
+    status: "CRITICAL"
+  },
+  {
+    title: "Equipment Information",
+    desc: "Overlaid telemetry for heavy drill rigs, haulers, and conveyors—displaying temperature, hydraulic pressure, and safe standoff distances.",
+    tag: "HEAVY MACHINERY",
+    status: "REAL-TIME"
+  },
+  {
+    title: "Safety Warnings",
+    desc: "Immediate visual alarms when unstable rock walls, seismic micro-fractures, or structural shifts are detected in underground tunnels.",
+    tag: "PREDICTIVE ALERTS",
+    status: "MONITORED"
+  },
+  {
+    title: "Emergency Exits",
+    desc: "High-contrast AR pathway chevrons pointing toward refuge chambers and fresh air supply shafts through heavy dust or smoke.",
+    tag: "EVACUATION",
+    status: "FAIL-SAFE"
+  },
+  {
+    title: "Operational Instructions",
+    desc: "Hands-free digital checklist for ventilation shaft inspections, drill positioning, and blast preparation protocols.",
+    tag: "STANDARD OPERATING",
+    status: "SOP-VERIFIED"
+  },
+  {
+    title: "Location-Based Guidance",
+    desc: "Contextual positioning coordinates inside subterranean tunnel networks where standard GPS signals are completely unavailable.",
+    tag: "SPATIAL MAPPING",
+    status: "LOCALIZED"
+  }
+];
+---
+
+<section id="mining" class="section">
+  <div class="container">
+    <div class="section-header reveal-on-scroll">
+      <span class="section-tag">Industry Deep Dive</span>
+      <h2 class="section-title">AR Mine in the Mining Industry</h2>
+      <p class="section-subtitle">
+        Mining environments contain underground tunnels, heavy machinery, restricted zones, unstable rock faces, and atmospheric hazards. AR Mine acts as a continuous contextual safety layer.
+      </p>
+    </div>
+
+    <!-- Visual Showcase Split -->
+    <div class="mining-showcase-split">
+      <div class="mining-preview-card card reveal-on-scroll">
+        <div class="preview-header">
+          <div class="badge-row">
+            <span class="ar-badge ar-badge-hazard">
+              <span class="pulse-dot"></span>
+              SUB-SURFACE ACTIVE
+            </span>
+            <span class="preview-location">DEEP LEVEL 04 · SECTOR 18</span>
+          </div>
+          <span class="preview-signal">AR TELEMETRY: SYNCED</span>
+        </div>
+
+        <div class="preview-frame ar-reticle-frame">
+          <img 
+            src="/assets/armine-emergency-overlay.png" 
+            alt="AR Mine Emergency Overlay in Mining Environment" 
+            class="preview-img"
+            loading="lazy"
+          />
+          <div class="preview-caption">
+            <span class="caption-tag">Live Interface Simulation</span>
+            <p>Augmented safety warning overlay indicating emergency route and hazard proximity.</p>
+          </div>
+        </div>
+
+        <!-- Mining Environmental Challenges Badges -->
+        <div class="challenges-strip">
+          <div class="challenge-item">
+            <span class="ch-icon">⛏️</span>
+            <span>Underground Tunnels</span>
+          </div>
+          <div class="challenge-item">
+            <span class="ch-icon">🚜</span>
+            <span>Heavy Machinery</span>
+          </div>
+          <div class="challenge-item">
+            <span class="ch-icon">⛔</span>
+            <span>Restricted Zones</span>
+          </div>
+          <div class="challenge-item">
+            <span class="ch-icon">⚠️</span>
+            <span>Unstable Formations</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mining 6 Information Cards -->
+      <div class="mining-cards-grid">
+        {miningCards.map((card, idx) => (
+          <div class="mining-info-card card reveal-on-scroll" data-reveal-delay={idx * 60}>
+            <div class="mining-card-header">
+              <span class="m-tag">{card.tag}</span>
+              <span class="m-status">{card.status}</span>
+            </div>
+            <h3 class="m-title">{card.title}</h3>
+            <p class="m-desc">{card.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .mining-showcase-split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  @media (min-width: 1024px) {
+    .mining-showcase-split {
+      grid-template-columns: 1fr 1.35fr;
+      gap: 3rem;
+    }
+  }
+
+  .mining-preview-card {
+    padding: 1.5rem;
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .badge-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .preview-location {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  .preview-signal {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+  }
+
+  .preview-frame {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    background-color: #0F172A;
+  }
+
+  .preview-img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .preview-caption {
+    padding: 1rem;
+    background-color: #FFFFFF;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .caption-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  .preview-caption p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .challenges-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .challenge-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background-color: var(--bg-secondary);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .ch-icon {
+    font-size: 1rem;
+  }
+
+  /* Mining Cards Grid */
+  .mining-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .mining-cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .mining-info-card {
+    padding: 1.5rem;
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-normal);
+  }
+
+  .mining-info-card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .mining-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+
+  .m-tag {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    letter-spacing: 0.05em;
+  }
+
+  .m-status {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background-color: var(--bg-secondary);
+    padding: 0.15rem 0.45rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .m-title {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .m-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+</style>

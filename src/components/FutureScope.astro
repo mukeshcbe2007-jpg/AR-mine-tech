@@ -1,0 +1,289 @@
+---
+// FutureScope.astro - The Future of AR Mine (Roadmap & Next Horizon)
+const futurePillars = [
+  {
+    title: "Artificial Intelligence",
+    desc: "Machine learning models trained to anticipate hazardous worker positioning, dangerous machine behaviors, and high-risk thermal anomalies."
+  },
+  {
+    title: "Internet of Things (IoT)",
+    desc: "Telemetry bridges linking subterranean gas detectors, seismic sensors, and conveyor vibration monitors directly to AR headsets."
+  },
+  {
+    title: "Computer Vision",
+    desc: "Real-time edge recognition to detect missing personal protective equipment (PPE), micro-fractures in tunnel roofs, and unauthorized access."
+  },
+  {
+    title: "Real-Time Monitoring",
+    desc: "Centralized supervisor telemetry consoles synchronizing live location badges and physiological vitals of subterranean crews."
+  },
+  {
+    title: "Wearable AR Smart Glasses",
+    desc: "Transition from mobile displays to ruggedized, intrinsically safe industrial smart glasses for completely hands-free operation."
+  },
+  {
+    title: "Voice Assistance & Audio HUD",
+    desc: "Intrinsically safe noise-cancelling voice input allowing workers to query technical manuals and acknowledge alarms completely hands-free."
+  },
+  {
+    title: "Predictive Safety Systems",
+    desc: "Proactive danger forecasts generated from multi-modal sensor inputs to avert catastrophic industrial failures before they manifest."
+  }
+];
+
+const roadmapSteps = [
+  { phase: "PHASE 1", label: "AR Core", status: "Current Foundation" },
+  { phase: "PHASE 2", label: "Computer Vision", status: "Vision Pipeline" },
+  { phase: "PHASE 3", label: "AI Models", status: "Risk Classification" },
+  { phase: "PHASE 4", label: "IoT Integration", status: "Sensor Telemetry" },
+  { phase: "PHASE 5", label: "Real-Time Monitoring", status: "Live Fleet Sync" },
+  { phase: "PHASE 6", label: "Intelligent Safety", status: "Autonomous Ecosystem" }
+];
+---
+
+<section id="future-scope" class="section">
+  <div class="container">
+    <div class="section-header reveal-on-scroll">
+      <span class="section-tag">Technology Horizon</span>
+      <h2 class="section-title">The Future of AR Mine</h2>
+      <p class="section-subtitle">
+        A forward-looking technology roadmap. While today's AR Mine establishes core spatial awareness, our future research explores deep integration with artificial intelligence, telemetry sensors, and wearable devices.
+      </p>
+    </div>
+
+    <!-- Future Scope Disclaimer Box -->
+    <div class="future-disclaimer card reveal-on-scroll">
+      <div class="disclaimer-icon">ℹ️</div>
+      <div class="disclaimer-text">
+        <strong>Research & Development Roadmap Notice:</strong> The features and integrations outlined in this section represent forward-looking research possibilities and academic concepts under exploration by Crew Stars. They are planned future extensions and are not presented as fully deployed in the initial prototype version.
+      </div>
+    </div>
+
+    <!-- Futuristic Tech Roadmap -->
+    <div class="roadmap-wrapper card reveal-on-scroll" data-reveal-delay="100">
+      <div class="roadmap-header">
+        <span class="rh-title">Evolutionary Roadmap</span>
+        <span class="rh-badge">Concept to Intelligent Ecosystem</span>
+      </div>
+
+      <div class="roadmap-timeline">
+        {roadmapSteps.map((step, idx) => (
+          <div class="roadmap-node">
+            <div class="node-marker-wrap">
+              <div class={`node-circle ${idx === 0 ? 'active-node' : ''}`}>
+                <span>{idx + 1}</span>
+              </div>
+              {idx < roadmapSteps.length - 1 && <div class="node-line"></div>}
+            </div>
+            <div class="node-content">
+              <span class="node-phase">{step.phase}</span>
+              <h4 class="node-label">{step.label}</h4>
+              <span class="node-status">{step.status}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Future Technology Pillars Grid -->
+    <div class="future-pillars-grid">
+      {futurePillars.map((pillar, idx) => (
+        <div class="pillar-card card reveal-on-scroll" data-reveal-delay={idx * 60}>
+          <div class="pillar-bullet"></div>
+          <h3 class="pillar-title">{pillar.title}</h3>
+          <p class="pillar-desc">{pillar.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .future-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.25rem 1.75rem;
+    background-color: var(--safety-info-bg);
+    border: 1px solid var(--safety-info-border);
+    margin-bottom: 3rem;
+  }
+
+  .disclaimer-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .disclaimer-text {
+    font-size: 0.925rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  .roadmap-wrapper {
+    padding: 2.25rem;
+    background: #FFFFFF;
+    margin-bottom: 3.5rem;
+  }
+
+  .roadmap-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .rh-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .rh-badge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    background-color: var(--accent-blue-subtle);
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--accent-blue-border);
+  }
+
+  .roadmap-timeline {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .roadmap-timeline {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .roadmap-timeline {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  .roadmap-node {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .node-marker-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .node-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: 2px solid var(--border-medium);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .node-circle.active-node {
+    border-color: var(--accent-blue);
+    background-color: var(--accent-blue);
+    color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.35);
+  }
+
+  .node-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: var(--border-subtle);
+    margin-left: 0.5rem;
+  }
+
+  .node-phase {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    letter-spacing: 0.05em;
+  }
+
+  .node-label {
+    font-size: 1.05rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+  }
+
+  .node-status {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  /* Future Pillars Grid */
+  .future-pillars-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .future-pillars-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .future-pillars-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .pillar-card {
+    padding: 1.75rem;
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-normal);
+  }
+
+  .pillar-card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .pillar-bullet {
+    width: 24px;
+    height: 3px;
+    background-color: var(--accent-blue);
+    margin-bottom: 1rem;
+    border-radius: 2px;
+  }
+
+  .pillar-title {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+</style>

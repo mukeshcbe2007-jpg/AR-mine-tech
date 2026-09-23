@@ -1,0 +1,328 @@
+---
+// Footer.astro - Clean, professional product footer
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top-grid">
+      <!-- Brand & Mission Column -->
+      <div class="footer-col brand-col">
+        <a href="/" class="footer-logo">
+          <div class="logo-mark" aria-hidden="true">
+            <span class="mark-reticle"></span>
+            <span class="mark-core"></span>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">AR MINE</span>
+            <span class="brand-sub">CREW STARS</span>
+          </div>
+        </a>
+
+        <p class="brand-tagline">
+          <strong>See the Risk. Understand the Environment. Work Safer.</strong>
+        </p>
+
+        <p class="brand-mission">
+          An Augmented Reality-based industrial safety platform engineered to improve workplace awareness, provide real-time guidance, and prevent hazards before accidents occur.
+        </p>
+
+        <div class="team-attribution-card">
+          <span class="attrib-label">DEVELOPED BY</span>
+          <span class="attrib-team">Team Crew Stars</span>
+          <span class="attrib-role">Lead: Mukesh A</span>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Platform</h4>
+        <ul class="footer-links">
+          <li><a href="/#about">About AR Mine</a></li>
+          <li><a href="/#features">Key Features</a></li>
+          <li><a href="/#mining">Mining Safety</a></li>
+          <li><a href="/#manufacturing">Manufacturing Safety</a></li>
+          <li><a href="/#workflow">How It Works</a></li>
+          <li><a href="/#future-scope">Future Scope</a></li>
+        </ul>
+      </div>
+
+      <!-- Team Members -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Crew Stars Team</h4>
+        <ul class="footer-links team-list">
+          <li class="lead-item"><strong>Mukesh A</strong> <span class="role-pill">Team Leader</span></li>
+          <li>Mahesh Kumar M <span class="member-pill">Member</span></li>
+          <li>Shakthi B <span class="member-pill">Member</span></li>
+          <li>Jothibalan C <span class="member-pill">Member</span></li>
+          <li>Franklin J <span class="member-pill">Member</span></li>
+          <li>Jenne Richard T.S <span class="member-pill">Member</span></li>
+        </ul>
+      </div>
+
+      <!-- Insights & Tech -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="/blog">AR Mine Insights</a></li>
+          <li><a href="/blog/ar-mine-transforming-safety">Featured Safety Article</a></li>
+          <li><a href="/about">Project Overview</a></li>
+          <li><a href="#hero">Interactive Simulator</a></li>
+        </ul>
+
+        <div class="tech-spec-box">
+          <span class="spec-title">TECH SPECIFICATION</span>
+          <p class="spec-detail">Astro.js Static Engine · Vanilla CSS Architecture · Anime.js Micro-Interactions</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="copyright">
+        © {currentYear} AR Mine · Crew Stars. All rights reserved. Built for industrial safety innovation.
+      </div>
+      <div class="footer-bottom-links">
+        <span>Accessibility Standard</span>
+        <span>•</span>
+        <span>Academic Project Showcase</span>
+        <span>•</span>
+        <a href="#hero" class="back-to-top">Back to top ↑</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    color: var(--text-secondary);
+  }
+
+  .footer-top-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  @media (min-width: 640px) {
+    .footer-top-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-top-grid {
+      grid-template-columns: 1.5fr 1fr 1.25fr 1fr;
+      gap: 3.5rem;
+    }
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .logo-mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #0F172A;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mark-reticle {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 1.5px dashed var(--accent-blue);
+    border-radius: 4px;
+  }
+
+  .mark-core {
+    width: 6px;
+    height: 6px;
+    background-color: #38BDF8;
+    border-radius: 2px;
+  }
+
+  .brand-name {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-primary);
+  }
+
+  .brand-sub {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+  }
+
+  .brand-tagline {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .brand-mission {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .team-attribution-card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .attrib-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+  }
+
+  .attrib-team {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+  }
+
+  .attrib-role {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+  }
+
+  .footer-heading {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .footer-links a:hover {
+    color: var(--accent-blue);
+    padding-left: 2px;
+  }
+
+  .team-list li {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .lead-item strong {
+    color: var(--text-primary);
+  }
+
+  .role-pill {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    background-color: var(--accent-blue-subtle);
+    padding: 0.15rem 0.45rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--accent-blue-border);
+  }
+
+  .member-pill {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    background-color: var(--bg-tertiary);
+    padding: 0.1rem 0.4rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .tech-spec-box {
+    margin-top: 1.5rem;
+    padding: 0.85rem 1rem;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+  }
+
+  .spec-title {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .spec-detail {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+
+  /* Bottom Bar */
+  .footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.825rem;
+    color: var(--text-muted);
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .back-to-top {
+    color: var(--accent-blue);
+    font-weight: 600;
+  }
+
+  .back-to-top:hover {
+    text-decoration: underline;
+  }
+</style>

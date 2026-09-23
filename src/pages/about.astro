@@ -1,0 +1,236 @@
+---
+// about.astro - Dedicated About AR Mine & Crew Stars Page
+import Layout from '../layouts/Layout.astro';
+import Team from '../components/Team.astro';
+---
+
+<Layout 
+  title="About AR Mine & Crew Stars | Industrial Augmented Reality Platform"
+  description="Learn about the AR Mine project, its founding vision for mining and manufacturing safety, and the student engineering team Crew Stars."
+  currentPath="/about"
+>
+  <!-- Page Header -->
+  <section class="about-hero-section">
+    <div class="container">
+      <div class="about-hero-inner">
+        <span class="section-tag">
+          <span class="pulse-dot"></span>
+          Mission & Background
+        </span>
+        <h1 class="page-title">Transforming High-Risk Industry with Spatial Intelligence</h1>
+        <p class="page-lead">
+          AR Mine was conceived with a single guiding mission: to replace static 2D paper manuals with real-time, hands-free Augmented Reality overlays that keep industrial workers safe in hazardous environments.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Mission & Narrative -->
+  <section class="section">
+    <div class="container">
+      <div class="narrative-grid">
+        <div class="narrative-content card reveal-on-scroll">
+          <span class="narrative-badge">PROJECT CONTEXT</span>
+          <h2>The Industrial Safety Challenge</h2>
+          <p>
+            Industrial environments such as underground mines and high-output manufacturing plants remain among the most dangerous operating environments in the modern world. In these sectors, accidents rarely happen because workers do not care about safety—they happen because hazards are dynamic, complex, and invisible until it is too late.
+          </p>
+          <p>
+            Traditional safety training predominantly relies on classroom sessions, printed instruction binders, warning plaques, and theoretical videos. While vital, these mediums suffer from a critical limitation: <strong>cognitive detachment</strong>. When a worker faces an emergency 200 meters underground, they cannot pause to flip through a binder.
+          </p>
+          <div class="quote-box">
+            <p>
+              "See the Risk. Understand the Environment. Work Safer."
+            </p>
+            <span class="quote-author">— AR Mine Core Philosophy</span>
+          </div>
+        </div>
+
+        <div class="narrative-visual card reveal-on-scroll" data-reveal-delay="100">
+          <span class="narrative-badge">SOLUTION ARCHITECTURE</span>
+          <h2>The AR Mine Solution</h2>
+          <p>
+            AR Mine bridges this gap by merging digital safety intelligence with the worker's direct field of view. By leveraging optical sensors, computer vision tagging, and spatial anchors, the system projects:
+          </p>
+          <ul class="solution-points">
+            <li>
+              <strong>Active Hazard Perimeters:</strong> Real-time visual boundaries around moving equipment, toxic zones, and structural fault lines.
+            </li>
+            <li>
+              <strong>Holographic SOP Overlays:</strong> Step-by-step disassembly, maintenance, and inspection guidance displayed directly over machinery parts.
+            </li>
+            <li>
+              <strong>Dynamic Evacuation Guidance:</strong> Luminous virtual waypoints pointing toward safe refuge bays through smoke, low light, or dust.
+            </li>
+          </ul>
+
+          <div class="spec-highlight">
+            <div class="sh-item">
+              <span class="sh-val">Zero</span>
+              <span class="sh-lbl">Paper Delays</span>
+            </div>
+            <div class="sh-item">
+              <span class="sh-val">Spatial</span>
+              <span class="sh-lbl">Contextual Precision</span>
+            </div>
+            <div class="sh-item">
+              <span class="sh-val">Instant</span>
+              <span class="sh-lbl">Hazard Warnings</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section Embedded -->
+  <Team />
+</Layout>
+
+<style>
+  .about-hero-section {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    background: radial-gradient(circle at 80% 20%, rgba(239, 246, 255, 0.7) 0%, rgba(255, 255, 255, 0) 50%);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .about-hero-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .page-title {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+  }
+
+  .page-lead {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  .narrative-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .narrative-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .narrative-content, .narrative-visual {
+    padding: 2.75rem 2.25rem;
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .narrative-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    background-color: var(--accent-blue-subtle);
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--accent-blue-border);
+  }
+
+  .narrative-grid h2 {
+    font-size: 1.65rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .narrative-grid p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+  }
+
+  .quote-box {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--bg-secondary);
+    border-left: 3px solid var(--accent-blue);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+
+  .quote-box p {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+
+  .quote-author {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .solution-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .solution-points li {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .solution-points li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent-blue);
+    font-weight: bold;
+  }
+
+  .solution-points strong {
+    color: var(--text-primary);
+  }
+
+  .spec-highlight {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .sh-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sh-val {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--accent-blue);
+  }
+
+  .sh-lbl {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+</style>

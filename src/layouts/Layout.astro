@@ -1,0 +1,91 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  currentPath?: string;
+}
+
+const {
+  title = 'AR Mine | Augmented Reality for Industrial Safety',
+  description = 'AR Mine explores how Augmented Reality can improve safety awareness, training, equipment understanding, and workplace guidance across mining and manufacturing environments.',
+  ogImage = '/assets/armine-ar-practice.png',
+  currentPath = '/'
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://armine-safety.vercel.app');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230F172A'/><rect x='25' y='25' width='50' height='50' rx='10' fill='none' stroke='%232563EB' stroke-width='8' stroke-dasharray='12,8'/><circle cx='50' cy='50' r='14' fill='%2338BDF8'/></svg>" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site || 'https://armine-safety.vercel.app')} />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site || 'https://armine-safety.vercel.app')} />
+
+    <!-- Preconnect Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body id="top">
+    <!-- Accessible Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <Navbar currentPath={currentPath} />
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <!-- Animation Script Initialization -->
+    <script>
+      import { setupSiteInteractions } from '../scripts/animations.js';
+      setupSiteInteractions();
+    </script>
+  </body>
+</html>
+
+<style>
+  .skip-link {
+    position: absolute;
+    top: -60px;
+    left: 20px;
+    background: var(--text-primary);
+    color: #FFFFFF;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    z-index: 9999;
+    transition: top 0.2s ease;
+    text-decoration: none;
+  }
+
+  .skip-link:focus {
+    top: 20px;
+  }
+</style>

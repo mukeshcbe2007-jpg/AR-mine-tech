@@ -1,0 +1,136 @@
+---
+// Benefits.astro - Five Clean Benefit Cards
+const benefits = [
+  {
+    title: "Improved Safety Awareness",
+    desc: "Workers can receive visual information about hazards and safety procedures within their working environment.",
+    metric: "Instant Spatial Alerts",
+    icon: "🛡️"
+  },
+  {
+    title: "Better Training Experience",
+    desc: "AR provides a more interactive approach to industrial safety training.",
+    metric: "Hands-on Immersion",
+    icon: "🎯"
+  },
+  {
+    title: "Faster Access to Information",
+    desc: "Important equipment and safety information can be accessed without depending entirely on physical manuals.",
+    metric: "Sub-Second Retrieval",
+    icon: "⚡"
+  },
+  {
+    title: "Reduced Learning Complexity",
+    desc: "Visual demonstrations can make complicated procedures easier to understand.",
+    metric: "Intuitive 3D Guidance",
+    icon: "💡"
+  },
+  {
+    title: "Enhanced Workplace Awareness",
+    desc: "Workers can better understand their surroundings and recognize important safety information.",
+    metric: "360° Environmental Context",
+    icon: "👁️"
+  }
+];
+---
+
+<section id="benefits" class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal-on-scroll">
+      <span class="section-tag">Value Proposition</span>
+      <h2 class="section-title">Benefits of AR Mine</h2>
+      <p class="section-subtitle">
+        Quantifiable safety advantages designed to safeguard worker lives, minimize industrial downtime, and standardize mission-critical procedures.
+      </p>
+    </div>
+
+    <div class="benefits-grid">
+      {benefits.map((b, idx) => (
+        <div class="benefit-card card reveal-on-scroll" data-reveal-delay={idx * 80}>
+          <div class="benefit-top">
+            <span class="b-icon">{b.icon}</span>
+            <span class="b-metric">{b.metric}</span>
+          </div>
+          <h3 class="b-title">{b.title}</h3>
+          <p class="b-desc">{b.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .benefits-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .benefits-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .benefits-grid > :nth-child(4) {
+      grid-column: 1 / 2;
+    }
+    .benefits-grid > :nth-child(5) {
+      grid-column: 2 / 3;
+    }
+  }
+
+  .benefit-card {
+    padding: 2.25rem 2rem;
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    transition: all var(--transition-normal);
+  }
+
+  .benefit-card:hover {
+    border-color: var(--accent-blue-border);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .benefit-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+  }
+
+  .b-icon {
+    font-size: 1.75rem;
+  }
+
+  .b-metric {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    background-color: var(--accent-blue-subtle);
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--accent-blue-border);
+  }
+
+  .b-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+
+  .b-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+</style>

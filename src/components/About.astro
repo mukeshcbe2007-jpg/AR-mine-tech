@@ -1,0 +1,388 @@
+---
+// About.astro - What is AR Mine & Why Augmented Reality for Safety
+---
+
+<section id="about" class="section">
+  <div class="container">
+    <!-- Part 1: What is AR Mine? -->
+    <div class="section-header reveal-on-scroll">
+      <span class="section-tag">Overview & Purpose</span>
+      <h2 class="section-title">What is AR Mine?</h2>
+      <p class="section-subtitle">
+        A next-generation digital safety platform engineered to display critical spatial intelligence directly within high-hazard industrial environments.
+      </p>
+    </div>
+
+    <div class="about-overview-grid">
+      <div class="overview-text card reveal-on-scroll">
+        <div class="overview-body">
+          <p class="lead-text">
+            <strong>AR Mine</strong> is a digital safety platform that uses <strong>Augmented Reality (AR)</strong> to display useful information directly within the user's surrounding environment.
+          </p>
+          <p>
+            Instead of depending only on traditional manuals, signs, or training videos, workers can use AR technology to visualize equipment, identify hazardous areas, understand safety procedures, and access important instructions in an interactive way.
+          </p>
+          <p>
+            The system is designed with a simple and user-friendly interface so that safety information can be understood quickly, even in complex industrial environments.
+          </p>
+        </div>
+
+        <div class="overview-features-list">
+          <div class="overview-pill">
+            <span class="pill-check">✓</span>
+            <span>Real-time environmental context</span>
+          </div>
+          <div class="overview-pill">
+            <span class="pill-check">✓</span>
+            <span>Zero cognitive overload interface</span>
+          </div>
+          <div class="overview-pill">
+            <span class="pill-check">✓</span>
+            <span>Immediate hazard visual alerts</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="overview-visual card reveal-on-scroll" data-reveal-delay="150">
+        <div class="device-frame">
+          <div class="frame-bar">
+            <span class="frame-dot"></span>
+            <span class="frame-dot"></span>
+            <span class="frame-dot"></span>
+            <span class="frame-title">AR Mine Worker Interface</span>
+          </div>
+          <img 
+            src="/assets/armine-worker-dashboard.png" 
+            alt="AR Mine Worker Dashboard Interface" 
+            class="overview-img"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Part 2: Why Augmented Reality for Safety? -->
+    <div class="why-ar-wrapper">
+      <div class="section-header reveal-on-scroll" style="margin-top: 5rem; margin-bottom: 3rem;">
+        <span class="section-tag">The Safety Paradigm Shift</span>
+        <h2 class="section-title">Why Augmented Reality for Safety?</h2>
+        <p class="section-subtitle">
+          Traditional safety training depends on classroom sessions, printed manuals, diagrams, and videos. While useful, they create a gap between theoretical knowledge and real-world high-risk environments.
+        </p>
+      </div>
+
+      <div class="comparison-grid">
+        <!-- Traditional Training Card -->
+        <div class="comparison-card traditional-card reveal-on-scroll">
+          <div class="comp-badge traditional-badge">Traditional Safety Methods</div>
+          <h3 class="comp-title">Theoretical Understanding</h3>
+          <p class="comp-desc">
+            Information is isolated from the physical workplace, leading to high cognitive delay when hazards suddenly arise.
+          </p>
+          <div class="pipeline-steps">
+            <div class="step-box">
+              <span class="step-tag">Step 1</span>
+              <span class="step-label">Manuals & Binders</span>
+            </div>
+            <div class="step-arrow">↓</div>
+            <div class="step-box">
+              <span class="step-tag">Step 2</span>
+              <span class="step-label">2D Static Diagrams</span>
+            </div>
+            <div class="step-arrow">↓</div>
+            <div class="step-box">
+              <span class="step-tag">Step 3</span>
+              <span class="step-label">Training Videos</span>
+            </div>
+            <div class="step-arrow">↓</div>
+            <div class="step-box step-outcome traditional-outcome">
+              <span class="outcome-icon">⚠️</span>
+              <span class="step-label">Theoretical Understanding</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AR-Based Training Card -->
+        <div class="comparison-card ar-card reveal-on-scroll" data-reveal-delay="150">
+          <div class="comp-badge ar-badge">AR Mine Platform</div>
+          <h3 class="comp-title">Practical Spatial Mastery</h3>
+          <p class="comp-desc">
+            Directly merges contextual digital safety guidance with real machinery and physical environmental coordinates.
+          </p>
+          <div class="pipeline-steps">
+            <div class="step-box ar-step">
+              <span class="step-tag ar-tag">Step 1</span>
+              <span class="step-label">Real Environment</span>
+            </div>
+            <div class="step-arrow ar-arrow">↓</div>
+            <div class="step-box ar-step">
+              <span class="step-tag ar-tag">Step 2</span>
+              <span class="step-label">Digital Overlays</span>
+            </div>
+            <div class="step-arrow ar-arrow">↓</div>
+            <div class="step-box ar-step">
+              <span class="step-tag ar-tag">Step 3</span>
+              <span class="step-label">Interactive Guidance</span>
+            </div>
+            <div class="step-arrow ar-arrow">↓</div>
+            <div class="step-box step-outcome ar-outcome">
+              <span class="outcome-icon">✓</span>
+              <span class="step-label">Practical Understanding</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-overview-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .about-overview-grid {
+      grid-template-columns: 1.15fr 1fr;
+    }
+  }
+
+  .overview-text {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .overview-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    margin-bottom: 2rem;
+  }
+
+  .lead-text {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    line-height: 1.7;
+  }
+
+  .overview-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .overview-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.925rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  .pill-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--safety-safe-bg);
+    color: var(--safety-safe);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .overview-visual {
+    padding: 1.25rem;
+    background-color: var(--bg-secondary);
+  }
+
+  .device-frame {
+    border-radius: var(--radius-md);
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .frame-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.65rem 1rem;
+    background-color: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .frame-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--border-medium);
+  }
+
+  .frame-title {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-left: 0.5rem;
+  }
+
+  .overview-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Comparison Grid */
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .comparison-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .comparison-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: 2.25rem;
+    transition: all var(--transition-normal);
+  }
+
+  .comparison-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .comp-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1.25rem;
+  }
+
+  .traditional-badge {
+    background-color: #F1F5F9;
+    color: #64748B;
+    border: 1px solid #CBD5E1;
+  }
+
+  .ar-badge {
+    background-color: var(--accent-blue-subtle);
+    color: var(--accent-blue);
+    border: 1px solid var(--accent-blue-border);
+  }
+
+  .ar-card {
+    border-color: #BFDBFE;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    box-shadow: 0 4px 20px -2px rgba(37, 99, 235, 0.06);
+  }
+
+  .comp-title {
+    margin-bottom: 0.75rem;
+  }
+
+  .comp-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  .pipeline-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+  }
+
+  .step-box {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .step-label {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.925rem;
+    color: var(--text-primary);
+  }
+
+  .step-arrow {
+    color: var(--text-subtle);
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  .ar-step {
+    background-color: #FFFFFF;
+    border-color: var(--accent-blue-border);
+  }
+
+  .ar-tag {
+    color: var(--accent-blue);
+  }
+
+  .ar-arrow {
+    color: var(--accent-blue);
+  }
+
+  .step-outcome {
+    padding: 1.1rem 1.25rem;
+  }
+
+  .traditional-outcome {
+    background-color: #FFFBEB;
+    border-color: #FDE68A;
+  }
+
+  .traditional-outcome .step-label {
+    color: #92400E;
+  }
+
+  .ar-outcome {
+    background-color: var(--safety-safe-bg);
+    border-color: var(--safety-safe-border);
+  }
+
+  .ar-outcome .step-label {
+    color: #166534;
+  }
+
+  .outcome-icon {
+    font-size: 1.1rem;
+  }
+</style>
